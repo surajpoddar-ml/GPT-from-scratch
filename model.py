@@ -4,7 +4,7 @@ from torch.nn import functional as F
 
 # hyperparameters - model lai train garna lagney settings haru
 batch_size = 32 # ek patak ma kati wota sequence lai sanga-sangai process garney?
-block_size = 8 # prediction garna ko lagi ab maximum kati wota character herna sakcha?
+block_size = 8 # prediction garna ko lagi ab maximum kati wota character herna
 max_iters = 3000
 eval_interval = 300
 learning_rate = 1e-2
