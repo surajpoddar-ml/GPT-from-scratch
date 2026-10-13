@@ -66,6 +66,7 @@ for step in range(max_iters):
 
     optimizer.zero_grad(set_to_none=True)
     loss.backward()
+    torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
     optimizer.step()
 
 context   = torch.zeros((1, 1), dtype=torch.long, device=device)
