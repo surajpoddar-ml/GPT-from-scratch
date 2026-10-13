@@ -69,6 +69,10 @@ for step in range(max_iters):
     torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
     optimizer.step()
 
+# model ko weights bachauney - dobara train garna naparne hoos bhanera
+torch.save(model.state_dict(), 'checkpoint.pt')
+print("checkpoint saved to checkpoint.pt")
+
 context   = torch.zeros((1, 1), dtype=torch.long, device=device)
 generated = model.generate(context, max_new_tokens=500)[0].tolist()
 print(decode(generated))
